@@ -152,7 +152,7 @@ const DashboardPage = () => {
                   padding: '1rem',
                   backgroundColor: 'rgba(0,0,0,0.2)',
                   borderRadius: 'var(--radius-md)',
-                  border: pulseQueueId === q.id ? '1px solid var(--accent-blue)' : '1px solid var(--border-color)',
+                  border: pulseQueueId === q.id ? '1px solid var(--accent-yellow)' : '1px solid var(--border-color)',
                   transition: 'border-color 0.3s'
                 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
@@ -169,7 +169,7 @@ const DashboardPage = () => {
                     <div style={{ 
                       width: `${Math.min(100, (q.depth / 1000) * 100)}%`, 
                       height: '100%', 
-                      backgroundColor: 'var(--accent-blue)',
+                      backgroundColor: 'var(--accent-yellow)',
                       transition: 'width 0.5s ease'
                     }} />
                   </div>
@@ -227,7 +227,7 @@ const DashboardPage = () => {
                   <div style={{ 
                     width: '40px', height: '40px', 
                     borderRadius: '50%', 
-                    border: `3px solid ${w.currentLoad > 0 ? 'var(--accent-blue)' : 'var(--border-color)'}`,
+                    border: `3px solid ${w.currentLoad > 0 ? 'var(--accent-yellow)' : 'var(--border-color)'}`,
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     fontWeight: 'bold', fontSize: '0.875rem'
                   }}>

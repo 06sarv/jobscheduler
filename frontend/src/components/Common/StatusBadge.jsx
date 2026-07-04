@@ -3,7 +3,7 @@ const StatusBadge = ({ status }) => {
   
   const configMap = {
     queued: { colorClass: 'badge-gray', dotClass: 'dot-gray' },
-    scheduled: { colorClass: 'badge-blue', dotClass: 'dot-blue' },
+    scheduled: { colorClass: 'badge-yellow', dotClass: 'dot-yellow' },
     claimed: { colorClass: 'badge-purple', dotClass: 'dot-purple' },
     running: { colorClass: 'badge-amber', dotClass: 'dot-amber' },
     completed: { colorClass: 'badge-emerald', dotClass: 'dot-emerald' },

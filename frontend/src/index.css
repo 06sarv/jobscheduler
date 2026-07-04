@@ -8,7 +8,7 @@
   --bg-card-hover: rgba(30, 41, 59, 0.8);
   
   /* Accents */
-  --accent-blue: #3b82f6;
+  --accent-yellow: #eab308;
   --accent-emerald: #10b981;
   --accent-amber: #f59e0b;
   --accent-rose: #f43f5e;
@@ -109,11 +109,11 @@ h1, h2, h3, h4 {
 }
 
 .btn-primary {
-  background-color: var(--accent-blue);
+  background-color: var(--accent-yellow);
   color: white;
 }
 .btn-primary:hover:not(:disabled) {
-  background-color: #2563eb;
+  background-color: #ca8a04;
 }
 
 .btn-danger {
@@ -147,7 +147,7 @@ h1, h2, h3, h4 {
 }
 .input:focus, .select:focus, .textarea:focus {
   outline: none;
-  border-color: var(--accent-blue);
+  border-color: var(--accent-yellow);
 }
 
 /* Badges */
@@ -161,7 +161,7 @@ h1, h2, h3, h4 {
   font-weight: 500;
   text-transform: capitalize;
 }
-.badge-blue { background: rgba(59, 130, 246, 0.1); color: var(--accent-blue); border: 1px solid rgba(59,130,246,0.2); }
+.badge-yellow { background: rgba(234, 179, 8, 0.1); color: var(--accent-yellow); border: 1px solid rgba(234, 179, 8, 0.2); }
 .badge-emerald { background: rgba(16, 185, 129, 0.1); color: var(--accent-emerald); border: 1px solid rgba(16,185,129,0.2); }
 .badge-amber { background: rgba(245, 158, 11, 0.1); color: var(--accent-amber); border: 1px solid rgba(245,158,11,0.2); }
 .badge-rose { background: rgba(244, 63, 94, 0.1); color: var(--accent-rose); border: 1px solid rgba(244,63,94,0.2); }
@@ -173,7 +173,7 @@ h1, h2, h3, h4 {
   height: 6px;
   border-radius: 50%;
 }
-.dot-blue { background-color: var(--accent-blue); }
+.dot-yellow { background-color: var(--accent-yellow); }
 .dot-emerald { background-color: var(--accent-emerald); }
 .dot-amber { background-color: var(--accent-amber); }
 .dot-rose { background-color: var(--accent-rose); }

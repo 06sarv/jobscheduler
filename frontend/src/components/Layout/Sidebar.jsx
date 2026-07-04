@@ -23,7 +23,7 @@ const Sidebar = () => {
       padding: '1.5rem 1rem'
     }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '3rem', padding: '0 0.5rem' }}>
-        <Zap size={24} color="var(--accent-blue)" />
+        <Zap size={24} color="var(--accent-yellow)" />
         <h1 style={{ fontSize: '1.25rem', fontWeight: 'bold', margin: 0 }}>JobScheduler</h1>
       </div>
 
@@ -39,7 +39,7 @@ const Sidebar = () => {
               padding: '0.75rem 1rem',
               borderRadius: 'var(--radius-md)',
               color: isActive ? 'white' : 'var(--text-secondary)',
-              backgroundColor: isActive ? 'var(--accent-blue)' : 'transparent',
+              backgroundColor: isActive ? 'var(--accent-yellow)' : 'transparent',
               textDecoration: 'none',
               fontWeight: 500,
               transition: 'all 0.2s'

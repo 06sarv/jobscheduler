@@ -49,7 +49,7 @@ const LoginPage = () => {
     }}>
       <div className="card" style={{ width: '100%', maxWidth: '400px', padding: '2.5rem' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-          <Zap size={48} color="var(--accent-blue)" />
+          <Zap size={48} color="var(--accent-yellow)" />
           <h1 style={{ fontSize: '1.5rem', marginTop: '1rem' }}>Welcome to JobScheduler</h1>
           <p className="text-secondary" style={{ marginTop: '0.5rem' }}>
             {isLogin ? 'Sign in to your account' : 'Create a new account'}
