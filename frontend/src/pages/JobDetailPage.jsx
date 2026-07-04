@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { usePolling } from '../hooks/usePolling';
 import client from '../api/client';
 import StatusBadge from '../components/Common/StatusBadge';
-import { RefreshCw, Sparkles } from 'lucide-react';
+import { RefreshCw } from 'lucide-react';
 
 const JobDetailPage = () => {
   const { id } = useParams();
@@ -96,7 +96,6 @@ const JobDetailPage = () => {
               marginTop: '0.5rem' 
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem', color: 'var(--accent-purple)' }}>
-                <Sparkles size={18} />
                 <h4 style={{ margin: 0, fontSize: '1rem' }}>AI Failure Analysis</h4>
               </div>
               <div style={{ color: 'var(--text-primary)', lineHeight: 1.5, fontSize: '0.9rem' }}>

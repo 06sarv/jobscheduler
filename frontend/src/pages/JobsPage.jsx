@@ -3,7 +3,7 @@ import { usePolling } from '../hooks/usePolling';
 import client from '../api/client';
 import StatusBadge from '../components/Common/StatusBadge';
 import { Link } from 'react-router-dom';
-import { RefreshCw, Sparkles } from 'lucide-react';
+import { RefreshCw } from 'lucide-react';
 
 const JobsPage = () => {
   const [page, setPage] = useState(1);
@@ -124,7 +124,7 @@ const JobsPage = () => {
                           className="btn btn-ghost" 
                           style={{ padding: '0.25rem 0.5rem', color: 'var(--accent-yellow)', display: 'flex', alignItems: 'center', gap: '0.25rem', textDecoration: 'none' }}
                         >
-                          <Sparkles size={14} /> AI Analysis
+                          AI Analysis
                         </Link>
                       )}
                     </td>
