@@ -3,7 +3,7 @@ import { usePolling } from '../hooks/usePolling';
 import client from '../api/client';
 import StatusBadge from '../components/Common/StatusBadge';
 import { Link } from 'react-router-dom';
-import { RefreshCw } from 'lucide-react';
+import { RefreshCw, Sparkles } from 'lucide-react';
 
 const JobsPage = () => {
   const [page, setPage] = useState(1);
@@ -108,7 +108,7 @@ const JobsPage = () => {
                     <td style={{ color: 'var(--text-secondary)' }}>
                       {job.durationMs ? `${job.durationMs}ms` : '-'}
                     </td>
-                    <td style={{ textAlign: 'right' }}>
+                    <td style={{ textAlign: 'right', display: 'flex', gap: '0.5rem', justifyContent: 'flex-end' }}>
                       {['queued', 'scheduled'].includes(job.status) && (
                         <button 
                           className="btn btn-ghost" 
@@ -117,6 +117,15 @@ const JobsPage = () => {
                         >
                           Cancel
                         </button>
+                      )}
+                      {['failed', 'dead'].includes(job.status) && (
+                        <Link 
+                          to={`/jobs/${job.id}`}
+                          className="btn btn-ghost" 
+                          style={{ padding: '0.25rem 0.5rem', color: 'var(--accent-yellow)', display: 'flex', alignItems: 'center', gap: '0.25rem', textDecoration: 'none' }}
+                        >
+                          <Sparkles size={14} /> AI Analysis
+                        </Link>
                       )}
                     </td>
                   </tr>
