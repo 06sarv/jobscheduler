@@ -20,6 +20,7 @@ const createQueueSchema = Joi.object({
 router.use(authenticate);
 
 router.post('/', validate(createQueueSchema), queueController.create);
+router.get('/', queueController.getAll);
 router.get('/project/:projectId', queueController.getByProjectId);
 router.get('/:id', queueController.getById);
 router.put('/:id', queueController.update);

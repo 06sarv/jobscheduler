@@ -64,7 +64,13 @@ const getByQueue = async (req, res, next) => {
     const { queueId } = req.params;
     const pagination = req.pagination; // set by parsePagination middleware
 
-    const result = await jobService.getByQueue(queueId, pagination);
+    const options = {
+      ...pagination,
+      status: req.query.status,
+      type: req.query.type,
+    };
+
+    const result = await jobService.findByQueueId(queueId, options);
 
     return res.status(200).json({
       success: true,

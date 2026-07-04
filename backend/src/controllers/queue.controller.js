@@ -49,6 +49,19 @@ const getByProjectId = async (req, res, next) => {
   }
 };
 
+const getAll = async (req, res, next) => {
+  try {
+    const queues = await queueService.findAll();
+
+    return res.status(200).json({
+      success: true,
+      data: queues,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
 const update = async (req, res, next) => {
   try {
     const queue = await queueService.update(req.params.id, req.body);
@@ -127,6 +140,7 @@ module.exports = {
   create,
   getById,
   getByProjectId,
+  getAll,
   update,
   pause,
   resume,

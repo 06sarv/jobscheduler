@@ -57,6 +57,29 @@ async function findByProjectId(projectId) {
   return result.rows;
 }
 
+// Get all queues with stats (used for main Queues list)
+async function findAll() {
+  const result = await query(`
+    SELECT q.*, p.name as project_name,
+           (SELECT COUNT(*) FROM jobs j WHERE j.queue_id = q.id AND j.status IN ('queued', 'scheduled'))::int as queued_jobs,
+           (SELECT COUNT(*) FROM jobs j WHERE j.queue_id = q.id AND j.status = 'running')::int as active_jobs
+    FROM queues q
+    LEFT JOIN projects p ON q.project_id = p.id
+    ORDER BY q.created_at DESC
+  `);
+  
+  return result.rows.map(q => ({
+    id: q.id,
+    name: q.name,
+    project: q.project_name || 'Default Project',
+    status: q.status,
+    priority: q.priority || 0,
+    concurrencyLimit: q.max_concurrency || 5,
+    activeJobs: q.active_jobs || 0,
+    queuedJobs: q.queued_jobs || 0
+  }));
+}
+
 // Update a queue's properties
 async function update(queueId, updateData) {
   // build the SET clause dynamically based on what fields are provided
@@ -166,6 +189,7 @@ module.exports = {
   create,
   findById,
   findByProjectId,
+  findAll,
   update,
   pause,
   resume,
