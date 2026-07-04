@@ -169,9 +169,15 @@ async function findByQueueId(queueId, options = {}) {
   const offset = (page - 1) * limit;
 
   // build WHERE conditions
-  let conditions = ['queue_id = $1'];
-  let params = [queueId];
-  let paramIdx = 2;
+  let conditions = [];
+  let params = [];
+  let paramIdx = 1;
+
+  if (queueId && queueId !== 'all') {
+    conditions.push(`queue_id = $${paramIdx}`);
+    params.push(queueId);
+    paramIdx++;
+  }
 
   if (status) {
     conditions.push(`status = $${paramIdx}`);
@@ -185,7 +191,7 @@ async function findByQueueId(queueId, options = {}) {
     paramIdx++;
   }
 
-  const whereClause = conditions.join(' AND ');
+  const whereClause = conditions.length > 0 ? conditions.join(' AND ') : '1=1';
 
   // whitelist sort columns to prevent SQL injection
   const allowedSorts = ['created_at', 'updated_at', 'priority', 'type', 'status', 'scheduled_at'];

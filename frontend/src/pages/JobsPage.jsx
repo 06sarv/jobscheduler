@@ -12,7 +12,7 @@ const JobsPage = () => {
   // Fetch real data from backend
   const { data, loading, refresh } = usePolling(async () => {
     try {
-      const res = await client.get(`/jobs/queue/all?page=${page}&limit=10${statusFilter ? `&status=${statusFilter}` : ''}`);
+      const res = await client.get(`/jobs/queue/all?page=${page}&limit=50${statusFilter ? `&status=${statusFilter}` : ''}`);
       return res.data.data;
     } catch (e) {
       // Return mock data for UI demo if backend is not ready
