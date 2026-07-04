@@ -20,7 +20,11 @@ const WorkersPage = () => {
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <h2>Worker Nodes</h2>
-        <button className="btn btn-primary" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+        <button 
+          className="btn btn-primary" 
+          style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}
+          onClick={() => alert('Workers are registered automatically when they connect to the platform. Please start a worker instance using the JobScheduler Node.js SDK.')}
+        >
           <Plus size={16} /> Register Worker
         </button>
       </div>
