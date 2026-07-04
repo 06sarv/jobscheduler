@@ -44,7 +44,7 @@ const LoginPage = () => {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      background: 'radial-gradient(circle at top right, rgba(59, 130, 246, 0.15), transparent 40%), radial-gradient(circle at bottom left, rgba(139, 92, 246, 0.15), transparent 40%)',
+      background: 'var(--bg-primary)',
       padding: '1rem'
     }}>
       <div className="card" style={{ width: '100%', maxWidth: '400px', padding: '2.5rem' }}>

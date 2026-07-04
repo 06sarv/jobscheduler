@@ -7,8 +7,8 @@ import StatusBadge from '../components/Common/StatusBadge';
 import { Package, Bot, CheckCircle, Clock } from 'lucide-react';
 
 // Helper components for the dashboard
-const MetricCard = ({ title, value, icon, gradient, loading }) => (
-  <div className="card" style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: gradient }}>
+const MetricCard = ({ title, value, icon, loading }) => (
+  <div className="card" style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
     <div style={{ fontSize: '2rem' }}>{icon}</div>
     <div>
       <h3 style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.8)', fontWeight: 'normal', margin: 0 }}>{title}</h3>
@@ -84,29 +84,25 @@ const DashboardPage = () => {
         <MetricCard 
           title="Total Jobs" 
           value={healthData?.totalJobs?.toLocaleString()} 
-          icon={<Package size={32} />} 
-          gradient="linear-gradient(135deg, rgba(59,130,246,0.2) 0%, rgba(59,130,246,0.05) 100%)"
+          icon={<Package size={32} />}
           loading={healthLoading}
         />
         <MetricCard 
           title="Active Workers" 
           value={healthData?.activeWorkers} 
-          icon={<Bot size={32} />} 
-          gradient="linear-gradient(135deg, rgba(16,185,129,0.2) 0%, rgba(16,185,129,0.05) 100%)"
+          icon={<Bot size={32} />}
           loading={healthLoading}
         />
         <MetricCard 
           title="Success Rate" 
           value={`${healthData?.successRate}%`} 
-          icon={<CheckCircle size={32} />} 
-          gradient="linear-gradient(135deg, rgba(245,158,11,0.2) 0%, rgba(245,158,11,0.05) 100%)"
+          icon={<CheckCircle size={32} />}
           loading={healthLoading}
         />
         <MetricCard 
           title="Avg Exec Time" 
           value={`${healthData?.avgExecutionTime}ms`} 
-          icon={<Clock size={32} />} 
-          gradient="linear-gradient(135deg, rgba(139,92,246,0.2) 0%, rgba(139,92,246,0.05) 100%)"
+          icon={<Clock size={32} />}
           loading={healthLoading}
         />
       </div>
