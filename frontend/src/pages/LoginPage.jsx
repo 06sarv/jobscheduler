@@ -128,6 +128,25 @@ const LoginPage = () => {
             {isLogin ? "Don't have an account? Sign up" : "Already have an account? Sign in"}
           </button>
         </div>
+
+        {isLogin && (
+          <div style={{ 
+            marginTop: '2rem', 
+            padding: '1rem', 
+            backgroundColor: 'rgba(0,0,0,0.1)', 
+            borderRadius: 'var(--radius-sm)',
+            border: '1px solid var(--border-color)',
+            fontSize: '0.75rem',
+            color: 'var(--text-secondary)',
+            textAlign: 'center'
+          }}>
+            <p style={{ fontWeight: '500', marginBottom: '0.5rem', color: 'var(--text-primary)' }}>Demo Credentials</p>
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem' }}>
+              <span><strong>Email:</strong> admin@example.com</span>
+              <span><strong>Password:</strong> password123</span>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
