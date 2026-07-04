@@ -74,8 +74,12 @@ const getByQueue = async (req, res, next) => {
 
     return res.status(200).json({
       success: true,
-      data: result.jobs,
-      pagination: result.pagination,
+      data: {
+        items: result.jobs,
+        total: result.total,
+        page: result.page,
+        totalPages: result.totalPages
+      }
     });
   } catch (error) {
     next(error);

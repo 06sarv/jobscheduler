@@ -24,6 +24,8 @@ router.get('/', queueController.getAll);
 router.get('/project/:projectId', queueController.getByProjectId);
 router.get('/:id', queueController.getById);
 router.put('/:id', queueController.update);
+router.post('/:id/pause', queueController.pause);
+router.post('/:id/resume', queueController.resume);
 router.delete('/:id', queueController.delete);
 
 // queue actions
